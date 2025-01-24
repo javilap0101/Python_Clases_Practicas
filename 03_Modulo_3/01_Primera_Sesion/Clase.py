@@ -1,5 +1,5 @@
 # App que permita dividir dos números
-"""
+
 # Con captura de excepciones
 
 def division_cero(numero1, numero2):
@@ -37,12 +37,16 @@ division_segura()
 
 def abrir_archivo():
     try:
-        with open("datos.txt", "r") as archivo:
+        with open("datos.txt", "r", encoding="utf-8") as archivo:
             contenido =  archivo.read()
-            numero = int(contenido.strip())
-            print(numero)
+            numero = len(contenido.strip())
     except Exception as e:
         print(f"Se produjo un error{e}")
+    else:
+        print(f"El archivo posee {numero} caracteres")
+    finally:
+        print("Operación finalizada")
+        archivo.close()
 
 abrir_archivo()
 
@@ -95,7 +99,6 @@ def procesar_pedido():
 
 procesar_pedido()
 
-"""
 
 # Excepciones personalizadas << Último ejercicio >>
 
