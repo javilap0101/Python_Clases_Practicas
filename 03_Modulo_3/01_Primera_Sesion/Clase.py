@@ -87,13 +87,14 @@ def procesar_pedido():
         if cantidad <= 0:
             raise ValueError("La cantidad del producto debe ser mayor a Cero")
         
-        precio_unitario = 50
-        total = precio_unitario * cantidad
-    
     except ValueError as e:
         print(f"Error al procesar el pedido: {e}")
+
     else:
+        precio_unitario = 50
+        total = precio_unitario * cantidad
         print(f"Total a pagar: {total}")
+        
     finally:
         print("Operación finalizada")
 
